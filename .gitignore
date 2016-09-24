@@ -9,3 +9,6 @@ __pycache__
 
 # ignore docker-compose files
 *docker-compose.yml
+
+# ignore byte code files
+*.pyc
