@@ -1,0 +1,28 @@
+# linux temporary files
+*~
+
+# emacs temporary files
+\#*\#
+
+# ignore itself
+.dockerignore
+
+# ignore Dockerfile
+Dockerfile
+
+# ignore git
+.git
+.gitignore
+.gitmodules
+
+# python cache
+__pycache__
+
+# ignore docker-compose files
+*docker-compose.yml
+
+# ignore byte code files
+*.pyc
+
+# ignore util scripts
+deploy.sh
