@@ -12,3 +12,6 @@ __pycache__
 
 # ignore byte code files
 *.pyc
+
+# ignore util scripts
+deploy.sh
