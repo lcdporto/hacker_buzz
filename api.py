@@ -11,9 +11,9 @@ p1.wait()
 
 app = bottle.app()
 
-@bottle.route('/classifications')
-def classifications():
-    return 'ok'
+@bottle.route('/')
+def index():
+    return {'status': 'ok'}
 
 if __name__=='__main__':
     bottle.debug(True)
