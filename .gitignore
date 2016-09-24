@@ -1,0 +1,11 @@
+# linux temporary files
+*~
+
+# emacs temporary files
+\#*\#
+
+# python cache
+__pycache__
+
+# ignore docker-compose files
+*docker-compose.yml
