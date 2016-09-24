@@ -12,7 +12,7 @@ python-dev
 ADD . /app
 WORKDIR /app
 
-RUN pip install requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 80
 
