@@ -9,7 +9,8 @@ apt-get -y install \
 python-pip \
 python-dev
 
-ADD . /app
+ADD data /data
+ADD app /app
 WORKDIR /app
 
 RUN pip install -r requirements.txt
