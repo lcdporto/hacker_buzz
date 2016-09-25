@@ -1,6 +1,6 @@
 import settings
 
-from exceptions import MissingFile
+from custom import MissingFile
 
 def save_image(request):
     """
@@ -8,6 +8,6 @@ def save_image(request):
     """
     upload = request.files.get('image')
     if upload is None:
-        raise MissingFile
+        raise Exception
     upload.save(settings.UPLOADS, True)
     return upload
