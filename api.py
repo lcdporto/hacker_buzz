@@ -6,7 +6,7 @@ import classifier
 import settings
 import utils
 
-from custom import MissingFile
+from exceptions import MissingFile
 
 p1 = subprocess.Popen(['ip','addr','show','eth0'],stdout=subprocess.PIPE)
 p2 = subprocess.Popen(['sed','-rn',r's/\s*inet\s(([0-9]{1,3}\.){3}[0-9]{1,3}).*/\1/p'],stdin=p1.stdout,stdout=subprocess.PIPE)
