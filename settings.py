@@ -2,7 +2,7 @@
 UPLOADS='/uploads/'
 
 # full path to labels file
-LABELS='/data/retrained_labels.txt'
+LABELS='/app/data/retrained_labels.txt'
 
 # full path to graph file
-GRAPH='/data/retrained_graph.pb'
+GRAPH='/app/data/retrained_graph.pb'
