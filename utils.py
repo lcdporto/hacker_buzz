@@ -1,6 +1,6 @@
 import settings
 
-from exceptions import MissingFile
+from custom import MissingFile
 
 def save_image(request):
     """
