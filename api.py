@@ -20,7 +20,7 @@ app = bottle.app()
 def index():
     return {'status': 'ok'}
 
-@bottle.route('/classify', method='POST')
+@bottle.route('/classifications', method='POST')
 def classify():
     try:
         img = utils.save_image(bottle.request)
