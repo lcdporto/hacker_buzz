@@ -16,6 +16,15 @@ p1.wait()
 
 app = bottle.app()
 
+@app.hook('after_request')
+def handle_cors():
+    """
+    Let there be no cors at all ;)
+    """
+    bottle.response.headers['Access-Control-Allow-Origin'] = '*'
+    bottle.response.headers['Access-Control-Allow-Methods'] = 'PUT, GET, POST, DELETE, OPTIONS'
+    bottle.response.headers['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
+
 @bottle.route('/')
 def index():
     return {'status': 'ok'}
