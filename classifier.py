@@ -1,6 +1,24 @@
 import tensorflow as tf
 import settings
 
+def temp_hack(results):
+    """
+    To make it easier for the web client, we are
+    goin to return only one option, for that we
+    sort the dict and return a new dict with only
+    the most probable option, the condition is there
+    because in some cases the result is in scientific
+    notation and we want to discard those (so we make
+    sure the first digit is 0)
+    """
+    final = {}
+    for x in sorted(results, key=results.get, reverse=True):
+        if int(results[x][0]) == 0:
+            final[x] = results[x]
+            break
+
+    return final
+
 def classify(image_path):
     """
     Given a file path return a classification
@@ -32,4 +50,4 @@ def classify(image_path):
             score = predictions[0][node_id]
             results[human_string] = str(score)
 
-    return results
+    return temp_hack(results)
