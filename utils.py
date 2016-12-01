@@ -1,4 +1,5 @@
 import os
+import sys
 import settings
 import requests
 from requests import exceptions
@@ -28,7 +29,7 @@ def save_image_from_url(request):
     """
     try:
         url = request.forms['url']
-        response = requests.get(url, stream=True, timeout=5)
+        response = requests.get(url, stream=True, timeout=500)
         if response.status_code == 200 and response.headers['content-type'] == 'image/jpeg':
             filename = random_filename()
             with open(os.path.join(settings.UPLOADS, filename), 'wb') as f:
