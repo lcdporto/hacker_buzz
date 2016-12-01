@@ -29,8 +29,10 @@ def handle_cors():
 def index():
     return {'status': 'ok'}
 
-@bottle.route('/classifications', method='POST')
+@bottle.route('/classifications', method=['OPTIONS', 'POST'])
 def classify():
+    if bottle.request.method == 'OPTIONS':
+        return {}
     try:
         img = utils.save_image(bottle.request)
         return classifier.classify(settings.UPLOADS + img.filename)
