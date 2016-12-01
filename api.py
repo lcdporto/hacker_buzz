@@ -39,6 +39,14 @@ def classify():
     except MissingFile:
         return {'error': 'missing image file'}
 
+@bottle.route('/urls', method=['OPTIONS', 'POST'])
+def classify_url():
+    if bottle.request.method == 'OPTIONS':
+        return {}
+    filename= utils.save_image_from_url(bottle.request)
+    return classifier.classify(settings.UPLOADS + filename)
+
+
 if __name__=='__main__':
     bottle.debug(True)
     bottle.run(app=app, host='localhost', port=80)
