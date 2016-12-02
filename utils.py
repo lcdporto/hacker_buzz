@@ -27,6 +27,7 @@ def save_image_from_url(request):
     """
     Save image to filesystem
     """
+    filename = None
     try:
         url = request.forms['url']
         response = requests.get(url, stream=True, timeout=500)
